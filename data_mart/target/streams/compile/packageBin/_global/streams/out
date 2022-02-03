@@ -1,0 +1,31 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/data_mart_2.11-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$typecreator5$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$typecreator5$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$typecreator3$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$typecreator3$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$anonfun$getAgeCategory$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$anonfun$getAgeCategory$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$anonfun$getShopCategory$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$anonfun$getShopCategory$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$anonfun$getUrl$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$anonfun$getUrl$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$typecreator7$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$typecreator7$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$typecreator4$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$typecreator4$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$anonfun$getWebCategory$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$anonfun$getWebCategory$1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$typecreator8$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$typecreator8$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	data_mart$$typecreator6$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/data_mart/target/scala-2.11/classes/data_mart$$typecreator6$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
