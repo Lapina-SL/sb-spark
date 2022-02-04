@@ -6,14 +6,15 @@ import java.net.{URL, URLDecoder}
 object data_mart {
   def main(args: Array[String]) = {
     val spark = SparkSession.builder()
-      .config("spark.cassandra.connection.host", "10.0.0.31")
-      .config("spark.cassandra.connection.port", "9042")
       .appName("lab03")
       .getOrCreate()
 
     val users = spark.read
       .format("org.apache.spark.sql.cassandra")
-      .options(Map("table" -> "clients", "keyspace" -> "labdata"))
+      .option("table", "clients")
+      .option("keyspace", "labdata")
+      .option("spark.cassandra.connection.host", "10.0.0.31")
+      .option("spark.cassandra.connection.port", "9042")
       .load()
 
     def getShopCategory = udf((a: String) => "shop_".concat(a.toLowerCase().replaceAll(" |-", "_")))
@@ -23,14 +24,12 @@ object data_mart {
       .option("es.index", "visits")
       .option("es.nodes", "10.0.0.31")
       .option("es.net.http.auth.user", "svetlana.lapina")
-      .option("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
-      .option("es.net.http.auth.pass", "u3x7fmab")
+      .option("es.net.http.auth.pass", "")
       .load("visits")
       .select(getShopCategory(col("category")).alias("category"), col("uid"))
       .na.drop("any")
 
-    def getUrl = udf((a: String) => a.replaceAll("https?://(www\\.)?", "")
-      .split("/")(0))
+    def getUrl = udf((a: String) => a.replaceAll("https?://(www\\.)?", "").split("/")(0))
 
     val logsWeb = spark.read.json("hdfs:///labs/laba03/weblogs.json")
       .select(col("uid"), explode(col("visits")).alias("visits"))
@@ -42,7 +41,7 @@ object data_mart {
       .option("url", "jdbc:postgresql://10.0.0.31:5432/labdata")
       .option("dbtable", "domain_cats")
       .option("user", "svetlana_lapina")
-      .option("password", "u3x7fmab")
+      .option("password", "")
       .option("driver", "org.postgresql.Driver")
       .load()
 
@@ -67,25 +66,21 @@ object data_mart {
         col("gender"),
         getAgeCategory(col("age")).alias("age_cat"),
         col("category"))
-      .na.fill("shop_mobile_phones")
 
 
     val result = usersCategories
       .groupBy(col("uid"), col("gender"), col("age_cat"))
       .pivot(col("category"))
       .agg(count(col("uid")))
+      .drop(col("null"))
       .na.fill(0)
-
-
-    result.show(20, 20, true)
-    println("RESULT SIZE " + result.count())
 
     result.write
       .format("jdbc")
       .option("url", "jdbc:postgresql://10.0.0.31:5432/svetlana_lapina")
       .option("dbtable", "clients")
       .option("user", "svetlana_lapina")
-      .option("password", "u3x7fmab")
+      .option("password", "")
       .option("driver", "org.postgresql.Driver")
       .save()
 
