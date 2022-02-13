@@ -1,6 +1,6 @@
 import org.apache.spark.sql.streaming.{DataStreamWriter, Trigger}
 import org.apache.spark.sql.{Column, DataFrame, RelationalGroupedDataset, Row, SparkSession}
-import org.apache.spark.sql.functions.{col, explode, from_json, from_unixtime, schema_of_json, udf}
+import org.apache.spark.sql.functions.{col, explode, from_json, from_unixtime, schema_of_json, udf, lit}
 import org.apache.spark.sql.types.{StringType, StructType, LongType}
 
 object filter {
@@ -40,14 +40,19 @@ object filter {
         col("value.timestamp").alias("timestamp")
       )
       .withColumn("date", from_unixtime(col("timestamp") / 1000, "yyyyMMdd"))
-      .withColumn("p_event_type", col("event_type"))
       .withColumn("p_date", col("date"))
 
-    val sink = createFileSink(parsedSdf)
+    val viewDf = parsedSdf.filter(col("event_type") === lit("view"))
+    val buyDf = parsedSdf.filter(col("event_type") === lit("buy"))
 
-    val sq = sink.start
+    val sink1 = createViewSink(viewDf)
+    val sink2 = createBuySink(buyDf)
 
-    sq.awaitTermination()
+    val sq1 = sink1.start
+    val sq2 = sink2.start
+
+    sq1.awaitTermination()
+    sq2.awaitTermination()
   }
 
   def createConsoleSink(df: DataFrame): DataStreamWriter[Row] = {
@@ -58,12 +63,21 @@ object filter {
       .foreachBatch((batch, id) => batch.show(20, false))
   }
 
-  def createFileSink(df: DataFrame): DataStreamWriter[Row] = {
+  def createViewSink(df: DataFrame): DataStreamWriter[Row] = {
     df.writeStream
-      .partitionBy("p_event_type", "p_date")
-      .format("parquet")
+      .partitionBy("p_date")
+      .format("json")
       .trigger(Trigger.ProcessingTime("5 seconds"))
-      .option("checkpointLocation", "/user/svetlana.lapina/tmp/chk")
-      .option("path", spark.conf.get("spark.filter.output_dir_prefix"))
+      .option("checkpointLocation", "/user/svetlana.lapina/tmp/chk/view")
+      .option("path", spark.conf.get("spark.filter.output_dir_prefix")+ "/view")
+  }
+
+  def createBuySink(df: DataFrame): DataStreamWriter[Row] = {
+    df.writeStream
+      .partitionBy("p_date")
+      .format("json")
+      .trigger(Trigger.ProcessingTime("5 seconds"))
+      .option("checkpointLocation", "/user/svetlana.lapina/tmp/chk/buy")
+      .option("path", spark.conf.get("spark.filter.output_dir_prefix")+ "/buy")
   }
 }
