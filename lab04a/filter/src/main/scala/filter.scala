@@ -66,7 +66,7 @@ object filter {
   def createViewSink(df: DataFrame): DataStreamWriter[Row] = {
     df.writeStream
       .partitionBy("p_date")
-      .format("json")
+      .format("parquet")
       .trigger(Trigger.ProcessingTime("5 seconds"))
       .option("checkpointLocation", "/user/svetlana.lapina/tmp/chk/view")
       .option("path", spark.conf.get("spark.filter.output_dir_prefix")+ "/view")
@@ -75,7 +75,7 @@ object filter {
   def createBuySink(df: DataFrame): DataStreamWriter[Row] = {
     df.writeStream
       .partitionBy("p_date")
-      .format("json")
+      .format("parquet")
       .trigger(Trigger.ProcessingTime("5 seconds"))
       .option("checkpointLocation", "/user/svetlana.lapina/tmp/chk/buy")
       .option("path", spark.conf.get("spark.filter.output_dir_prefix")+ "/buy")
