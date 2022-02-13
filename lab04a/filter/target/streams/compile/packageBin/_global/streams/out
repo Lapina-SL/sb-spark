@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/lapina-sl/IdeaProjects/sb-spark/lab04a/filter/filter/target/scala-2.11/filter_2.11-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	filter$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/filter/filter/target/scala-2.11/classes/filter$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	filter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/filter/filter/target/scala-2.11/classes/filter.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	filter$$anonfun$createConsoleSink$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/filter/filter/target/scala-2.11/classes/filter$$anonfun$createConsoleSink$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	schema.json[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/filter/filter/target/scala-2.11/classes/schema.json[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

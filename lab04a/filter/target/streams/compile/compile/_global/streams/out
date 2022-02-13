@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/lapina-sl/IdeaProjects/sb-spark/lab04a/filter/filter/src/main/scala/filter.scala:6:29: object generic is not a member of package io.circe[0m
+[0m[[0m[31merror[0m] [0m[0mimport io.circe._, io.circe.generic.semiauto._[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

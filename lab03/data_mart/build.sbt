@@ -8,7 +8,6 @@ lazy val commonSettings = Seq(
   libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % "2.5.0",
   libraryDependencies += "org.elasticsearch" %% "elasticsearch-spark-20" % "6.8.9",
   libraryDependencies += "org.postgresql" % "postgresql" % "42.2.12"
-
 )
 
 lazy val root = (project in file(".")).
