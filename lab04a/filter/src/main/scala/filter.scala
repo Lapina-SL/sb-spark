@@ -16,12 +16,10 @@ object filter {
     val topic = spark.conf.get("spark.filter.topic_name")
     val offset = spark.conf.get("spark.filter.offset")
 
-    val startingOffsets = s"{ \"${topic}\" : { \"0\" : ${offset} } }"
-
     val kafkaParams = Map(
       "kafka.bootstrap.servers" -> "spark-master-1:6667",
       "subscribe" -> topic,
-      "startingOffsets" -> startingOffsets
+      "startingOffsets" -> s"\"\"{\"${topic}\":{\"0\":${offset}}}\"\""
     )
 
 
