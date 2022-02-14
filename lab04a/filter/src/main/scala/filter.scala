@@ -19,10 +19,12 @@ object filter {
       "startingOffsets" -> spark.conf.get("spark.filter.offset")
     )
 
+    println("OFFSET "+ spark.conf.get("spark.filter.offset"))
+
     val df = spark.read
       .format("kafka")
       .options(kafkaParams)
-      .option("checkpointLocation", "/user/svetlana.lapina/tmp/chk")
+      //.option("checkpointLocation", "/user/svetlana.lapina/tmp/chk")
       .load
 
 
