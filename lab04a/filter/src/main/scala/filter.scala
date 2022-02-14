@@ -16,19 +16,22 @@ object filter {
     val topic = spark.conf.get("spark.filter.topic_name")
     val offset = spark.conf.get("spark.filter.offset")
 
+    val start_offset = offset match {
+      case "earliest" => "earliest"
+      case "latest"   => "latest"
+      case _          => f"""{"$topic": { "0": $offset }}"""
+    }
+
     val kafkaParams = Map(
       "kafka.bootstrap.servers" -> "spark-master-1:6667",
       "subscribe" -> topic,
-      "startingOffsets" -> s"\"\"{\"${topic}\":{\"0\":${offset}}}\"\""
+      "startingOffsets" -> start_offset
     )
-
-
-    println("OFFSET " + kafkaParams.get("startingOffsets"))
 
     val df = spark.read
       .format("kafka")
       .options(kafkaParams)
-      .option("checkpointLocation", "/user/svetlana.lapina/tmp/chk")
+      //.option("checkpointLocation", "/user/svetlana.lapina/tmp/chk")
       .load
 
 
