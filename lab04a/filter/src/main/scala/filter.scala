@@ -5,6 +5,7 @@ import org.apache.spark.sql.types.{StringType, StructType, LongType}
 
 object filter {
   val spark = SparkSession.builder()
+    .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.5, org.apache.kafka:kafka-clients:0.10.1.0")
     .appName("lab04a")
     .getOrCreate()
 
