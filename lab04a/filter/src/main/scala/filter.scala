@@ -16,7 +16,7 @@ object filter {
     val topic = spark.conf.get("spark.filter.topic_name")
     val offset = spark.conf.get("spark.filter.offset")
 
-    val startingOffsets = s"{\"${topic}\":{\"0\":${offset}}}"
+    val startingOffsets = s"{ \"${topic}\" : { \"0\" : ${offset} } }"
 
     val kafkaParams = Map(
       "kafka.bootstrap.servers" -> "spark-master-1:6667",
@@ -25,7 +25,7 @@ object filter {
     )
 
 
-    println("OFFSET "+ spark.conf.get("spark.filter.offset"))
+    println("OFFSET " + kafkaParams.get("tartingOffsets"))
 
     val df = spark.read
       .format("kafka")
