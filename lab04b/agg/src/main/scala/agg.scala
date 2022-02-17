@@ -11,7 +11,6 @@ object agg {
   val spark = SparkSession.builder()
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.11:2.4.5, org.apache.kafka:kafka-clients:0.10.1.0")
     .appName("lab04b")
-    .master("local")
     .getOrCreate()
 
   spark.sparkContext.setLogLevel("WARN")
@@ -30,7 +29,6 @@ object agg {
       .format("kafka")
       .options(kafkaParams)
       .load
-    //
 
     val schema = new StructType()
       .add("event_type", StringType, true)
@@ -50,8 +48,8 @@ object agg {
         col("value.uid").alias("uid")
       )
       .withColumn("visitors_uid", col("uid").isNotNull.cast("int"))
-      .withColumn("buy_price", col("uid").isNotNull.cast("int") * col("item_price"))
       .withColumn("buy_count", (col("event_type") === lit("buy")).cast("int"))
+      .withColumn("buy_price", col("buy_count") * col("item_price"))
       .withWatermark("timestamp", "1 hours")
       .groupBy(window($"timestamp", "1 hours"))
       .agg(sum("visitors_uid").as("visitors"),
@@ -85,11 +83,11 @@ object agg {
         df.selectExpr("CAST(start_ts AS STRING) AS key", "to_json(struct(*)) AS value")
           .writeStream
           .format("kafka")
+          .outputMode("update")
           .option("kafka.bootstrap.servers" , "spark-master-1:6667")
           .option("topic", "svetlana_lapina_lab04b_out")
           .trigger(Trigger.ProcessingTime("5 seconds"))
           .option("checkpointLocation", "/user/svetlana.lapina/tmp/chk")
-          //.option("checkpointLocation", s"/tmp/chk/$chkName")
   }
 
   case class Count(start_ts: Long, end_ts: Long, revenue: Long, visitors: Long, purchases: Long, aov: Double)
