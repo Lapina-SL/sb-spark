@@ -1,0 +1,19 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/agg_2.11-1.0.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	agg$$typecreator6$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/classes/agg$$typecreator6$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	agg$Count.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/classes/agg$Count.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	agg$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/classes/agg$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	agg$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/classes/agg$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	agg$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/classes/agg$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	agg$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/classes/agg$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	agg$Count$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/classes/agg$Count$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	agg.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab04a/agg/target/scala-2.11/classes/agg.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
