@@ -15,48 +15,46 @@ object users_items {
     val inputDir = spark.conf.get("spark.users_items.input_dir")
 
     val df = spark.read
-      .json(inputDir + "/*/*/*")
+      .json(inputDir + "/*/*/*", "/user/svetlana.lapina/visits/*/*/*")
       .filter('uid.isNotNull)
       .withColumn("item", concat('event_type, lit("_"), 'item_id))
       .select('uid, lower(regexp_replace('item, " |-", "_")).alias("event"))
-
-    val firstDf = df
       .groupBy('uid)
       .pivot('event)
       .agg(count('uid))
       .na.fill(0)
 
-
-    mode match {
-      case "0" => writeCreate(df, outputDir)
-      case "1" => writeUpdate(df, outputDir, spark)
-    }
+    writeCreate(df, outputDir)
+    //    mode match {
+    //      case "0" => writeCreate(df, outputDir)
+    //      case "1" => writeUpdate(df, outputDir, spark)
+    //    }
   }
 
   def writeCreate(df: DataFrame, outputDir: String) = {
     df.write
       .format("parquet")
       .mode("overwrite")
-      .option("path", outputDir + "/20200429")
-      .save()
-  }
-
-  def writeUpdate(df: DataFrame, outputDir: String, spark: SparkSession) = {
-
-    val oldDf = spark.read
-      .parquet(outputDir + "/20200429")
-
-    oldDf.write
-      .mode("overwrite")
-      .format("parquet")
-      .option("path", outputDir + "/20200430")
-      .save()
-
-    val newDf = oldDf.union(df)
-    newDf.write
-      .mode("append")
-      .format("parquet")
       .option("path", outputDir + "/20200430")
       .save()
   }
+
+//  def writeUpdate(df: DataFrame, outputDir: String, spark: SparkSession) = {
+//
+//    val oldDf = spark.read
+//      .parquet(outputDir + "/20200429")
+//
+//    oldDf.write
+//      .mode("overwrite")
+//      .format("parquet")
+//      .option("path", outputDir + "/20200430")
+//      .save()
+//
+//    val newDf = oldDf.union(df)
+//    newDf.write
+//      .mode("append")
+//      .format("parquet")
+//      .option("path", outputDir + "/20200430")
+//      .save()
+//  }
 }
