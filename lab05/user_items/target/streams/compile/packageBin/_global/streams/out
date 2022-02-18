@@ -1,7 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/lapina-sl/IdeaProjects/sb-spark/lab05/user_items/target/scala-2.11/user_items_2.11-1.0.jar ...[0m
-[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	user_items$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab05/user_items/target/scala-2.11/classes/user_items$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	user_items.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab05/user_items/target/scala-2.11/classes/user_items.class[0m
-[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
