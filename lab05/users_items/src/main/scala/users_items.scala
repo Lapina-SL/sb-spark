@@ -18,7 +18,7 @@ object users_items {
       .json(inputDir + "/*/*/*")
       .filter('uid.isNotNull)
       .withColumn("item", concat('event_type, lit("_"), 'item_id))
-      .select('uid, regexp_replace('item, " |-", "_").alias("event"))
+      .select('uid,  lower(regexp_replace('item, " |-", "_")).alias("event"))
       .groupBy('uid)
       .pivot('event)
       .agg(count('uid))
