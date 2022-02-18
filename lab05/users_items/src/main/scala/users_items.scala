@@ -18,12 +18,13 @@ object users_items {
       .json(inputDir + "/*/*/*")
       .filter('uid.isNotNull)
       .withColumn("item", concat('event_type, lit("_"), 'item_id))
-      .select('uid,  lower(regexp_replace('item, " |-", "_")).alias("event"))
+      .select('uid, lower(regexp_replace('item, " |-", "_")).alias("event"))
+
+    val firstDf = df
       .groupBy('uid)
       .pivot('event)
       .agg(count('uid))
       .na.fill(0)
-
 
 
     mode match {
@@ -42,10 +43,18 @@ object users_items {
 
   def writeUpdate(df: DataFrame, outputDir: String, spark: SparkSession) = {
 
-    val oldDf = spark.read.parquet(outputDir + "/20200429")
+    val oldDf = spark.read
+      .parquet(outputDir + "/20200429")
+
+    oldDf.write
+      .mode("overwrite")
+      .format("parquet")
+      .option("path", outputDir + "/20200430")
+      .save()
+
     val newDf = oldDf.union(df)
     newDf.write
-      .mode("overwrite")
+      .mode("append")
       .format("parquet")
       .option("path", outputDir + "/20200430")
       .save()
