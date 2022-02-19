@@ -1,0 +1,26 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/lapina-sl/IdeaProjects/sb-spark/lab06/features/target/scala-2.11/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	features$$anonfun$3.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/lapina-sl/IdeaProjects/sb-spark/lab06/features/target/scala-2.11/classes.bak[0m
