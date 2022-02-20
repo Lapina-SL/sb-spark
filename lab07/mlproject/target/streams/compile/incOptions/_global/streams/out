@@ -1,0 +1,44 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /home/lapina-sl/IdeaProjects/sb-spark/lab07/mlproject/target/scala-2.11/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$Model$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$Model.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator6$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$Model$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$Model.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator6$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$Model$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$Model$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator2$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$Model.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$Model.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$$anonfun$1$$anonfun$apply$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator6$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train$$anonfun$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	train.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$$typecreator1$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	test$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /home/lapina-sl/IdeaProjects/sb-spark/lab07/mlproject/target/scala-2.11/classes.bak[0m
