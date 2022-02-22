@@ -1,7 +1,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /home/lapina-sl/IdeaProjects/sb-spark/lab07/mlproject/target/scala-2.11/mlproject_2.11-0.1.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	train$$typecreator6$1.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab07/mlproject/target/scala-2.11/classes/train$$typecreator6$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	train$Model.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /home/lapina-sl/IdeaProjects/sb-spark/lab07/mlproject/target/scala-2.11/classes/train$Model.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	train$.class[0m

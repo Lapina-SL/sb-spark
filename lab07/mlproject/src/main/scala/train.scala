@@ -12,8 +12,8 @@ object train {
 
     import spark.implicits._
 
-    val model_path = spark.conf.get("model.path")
-    val json_path = spark.conf.get("json.path")
+    val model_path = spark.conf.get("spark.model.path")
+    val json_path = spark.conf.get("spark.json.path")
 
     val getDomains = udf((arr: Seq[String]) => arr.map(s => s.replaceAll("https?://(www\\.)?", "").split("/")(0)))
 
@@ -21,24 +21,29 @@ object train {
       .json(json_path)
       .withColumn("domains", getDomains(map_values(map_from_entries(col("visits")))))
       .select(col("uid"), col("domains"), col("gender_age"))
-      .as[Model]
-
-    training.show(100, 50)
+      .withColumn("gen_age", col("gender_age"))
 
     val cv = new CountVectorizer()
       .setInputCol("domains")
       .setOutputCol("features")
 
-    val indexer: StringIndexer = new StringIndexer()
+    val indexer = new StringIndexer()
       .setInputCol("gender_age")
       .setOutputCol("label")
+      .fit(training)
+
+    val converter = new IndexToString()
+      .setLabels(indexer.labels)
+      .setInputCol("prediction")
+      .setOutputCol("label_name")
 
     val lr = new LogisticRegression()
       .setMaxIter(10)
       .setRegParam(0.001)
 
+
     val pipeline = new Pipeline()
-      .setStages(Array(cv, indexer, lr))
+      .setStages(Array(cv, indexer, lr, converter))
 
     val model = pipeline.fit(training)
 
